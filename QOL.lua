@@ -82,7 +82,7 @@ local TestAnimation
 			if ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) < 54 then
 			WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) + 0.25, true)
 			end
-		elseif ReadByte(Save+0x3524) == 0 then
+		elseif ReadByte(Save+0x3524) == 0 or ReadByte(Save+0x3524) == 3 then
 			if ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) < 24 then
 			WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) + 0.25, true)
 			end
@@ -98,10 +98,10 @@ local TestAnimation
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 16, true)
 		elseif ReadByte(Save+0x3524) == 6 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 18, true)
-		elseif ReadByte(Save+0x3524) == 0 then
+		elseif ReadByte(Save+0x3524) == 0 ReadByte(Save+0x3524) == 3 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 8, true)
 		end
-		if RunTimer < 120 then
+		if RunTimer < 120 and ReadByte(Cntrl) == 0 then
 		RunTimer = RunTimer + 1
 		end
 	end
