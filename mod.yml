@@ -1,5 +1,5 @@
 title: QoL Improvements
-description: An ongoing mod that aims to provide QoL improvements to various movement abilities and other gameplay mechanics.
+description: An ongoing mod that aims to provide QoL improvements to various movement abilities and other gameplay mechanics. Currently, this mod lets you run faster the longer you are running, gives you a higher FOV, slightly speeds up the chest opening animation, includes better glide movement, and removes most of the speed decay from Quick Run.
 assets:
 #Lua Scripts
 - name: scripts/QOL.lua
