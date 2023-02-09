@@ -115,11 +115,6 @@ local TestAnimation
 	WriteFloat(0x47435D - 0x56454E, 1.25)
 	Done = 1
 	end
-
-	if _CurrAnimPointer == 252 then
-	WriteFloat(animpointer, 1.5, true)
-	else WriteFloat(animpointer, 1, true)
-	end
 	
 WriteFloat(0x250D326, 1) --QR1 Acceleration
 WriteFloat(0x250D32A, 0.98) --QR1 Deceleration
