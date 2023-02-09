@@ -98,7 +98,7 @@ local TestAnimation
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 16, true)
 		elseif ReadByte(Save+0x3524) == 6 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 18, true)
-		elseif ReadByte(Save+0x3524) == 0 ReadByte(Save+0x3524) == 3 then
+		elseif ReadByte(Save+0x3524) == 0 or ReadByte(Save+0x3524) == 3 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 8, true)
 		end
 		if RunTimer < 120 and ReadByte(Cntrl) == 0 then
