@@ -1,0 +1,8 @@
+title: QoL Improvements
+description: An ongoing mod that aims to provide QoL improvements to various movement abilities and other gameplay mechanics.
+assets:
+#Lua Scripts
+- name: scripts/QOL.lua
+  method: copy
+  source:
+  - name: QOL.lua
