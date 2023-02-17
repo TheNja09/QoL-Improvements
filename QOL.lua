@@ -1,6 +1,7 @@
 RunTimer = 120
 KeepAccelerate = {2, 3, 4, 5, 201, 202}
 Done = 0
+Valor = 30
 function _OnFrame()
     World = ReadByte(Now + 0x00)
     Room = ReadByte(Now + 0x01)
@@ -18,7 +19,7 @@ function _OnInit()
         Now = 0x032BAE0 --Current Location
         Save = 0x032BB30 --Save File
         Obj0 = 0x1C94100 --00objentry.bin
-		Cntrl = 0x1D48DB8
+	Cntrl = 0x1D48DB8
         Sys3 = 0x1CCB300 --03system.bin
         Btl0 = 0x1CE5D80 --00battle.bin
         Slot1 = 0x1C6C750 --Unit Slot 1
@@ -27,7 +28,7 @@ function _OnInit()
         Now = 0x0714DB8 - 0x56454E
         Save = 0x09A7070 - 0x56450E
         Obj0 = 0x2A22B90 - 0x56450E
-		Cntrl = 0x2A148A8 - 0x56450E
+	Cntrl = 0x2A148A8 - 0x56450E
         Sys3 = 0x2A59DB0 - 0x56450E
         Btl0 = 0x2A74840 - 0x56450E
         Slot1 = 0x2A20C58 - 0x56450E
@@ -122,6 +123,16 @@ local TestAnimation
 	Done = 1
 	end
 	
+	if _CurrAnimPointer == 183 and ReadByte(Save+0x3524) == 1 then
+	Valor = Valor - 1
+		if Valor == 0 then
+		WriteFloat(animpointer, 2, true)
+		end
+	else 
+	Valor = 30
+	WriteFloat(animpointer, 1, true)
+	end
+
 WriteFloat(0x250D326, 1) --QR1 Acceleration
 WriteFloat(0x250D32A, 0.98) --QR1 Deceleration
 WriteFloat(0x250D36A, 1) --QR2 Acceleration
