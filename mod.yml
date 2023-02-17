@@ -1,5 +1,5 @@
 title: QoL Improvements
-description: An ongoing mod that aims to provide QoL improvements to various movement abilities and other gameplay mechanics. Currently, this mod lets you run faster the longer you are running, removes Sora's terminal velocity, gives you a higher FOV, includes better glide movement, removes most of the speed decay from Quick Run, and forms will not drain outside of battle.
+description: An ongoing mod that aims to provide QoL improvements to various movement abilities and other gameplay mechanics. Currently, this mod Gives you a higher FOV, includes better movement, allows Form & Drive refill at save points, forms will not drain outside of battle, and more!
 assets:
 #Lua Scripts
 - name: scripts/QOL.lua
