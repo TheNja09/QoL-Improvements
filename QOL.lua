@@ -62,7 +62,7 @@ local TestAnimation
 	if _CurrAnimPointer == 2 and RunTimer > 0 and ReadShort(0x6877DA) == 0 then
 	RunTimer = RunTimer - 1
 	end
-	if RunTimer == 0 and _FoundArrayAnim == true then
+	if RunTimer == 0 and _FoundArrayAnim == true and ReadByte(0x2A0E7D0 - 0x56454E) ~= 2 then
 		if ReadShort(Now+0) == 0x0E07 or ReadShort(Now+0) == 0x0507 then
 			if ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) < 60 then
 			WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) + 0.25, true)
@@ -92,7 +92,7 @@ local TestAnimation
 			WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, ReadFloat(ReadLong(SoraCurrentSpeed)+0x12C, true) + 0.25, true)
 			end
 		end
-	elseif _CurrAnimPointer ~= 2 then
+	elseif _CurrAnimPointer ~= 2 and ReadByte(0x2A0E7D0 - 0x56454E) ~= 2 then
 		if ReadShort(Now+0) == 0x0E07 or ReadShort(Now+0) == 0x0507 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 20, true)
 		elseif ReadByte(Now+0) == 0x0A then
