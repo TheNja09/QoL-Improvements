@@ -134,7 +134,7 @@ local TestAnimation
 	WriteFloat(animpointer, 1, true)
 	end
 	
-	if ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) == 0 then
+	if ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) == 0 and ReadShort(0x6877DA) == 0 then
 	Refill = Refill - 1
 		if Refill <= 0 then
 			if ReadByte(Slot1+0x1B0) < 100 and ReadByte(Slot1+0x1B1) ~= ReadByte(Slot1+0x1B2) then
