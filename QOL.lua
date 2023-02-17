@@ -115,7 +115,7 @@ local TestAnimation
 	end
 
 	if ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) > 0 and ReadShort(0x6877DA) == 0 then
-	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, -1.5, true)
+	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, -3, true)
 	elseif ReadByte(0x24AA5B6) == 0 then
 	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, 0, true)
 	else WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, 1, true)
