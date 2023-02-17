@@ -1,4 +1,4 @@
-RunTimer = 120
+RunTimer = 60
 KeepAccelerate = {2, 3, 4, 5, 201, 202}
 Done = 0
 Valor = 30
@@ -108,7 +108,7 @@ local TestAnimation
 		elseif ReadByte(Save+0x3524) == 0 or ReadByte(Save+0x3524) == 3 then
 		WriteFloat(ReadLong(SoraCurrentSpeed)+0x12C, 8, true)
 		end
-		if RunTimer < 120 and ReadByte(Cntrl) == 0 and ReadShort(0x6877DA) == 0 then
+		if RunTimer < 60 and ReadByte(Cntrl) == 0 and ReadShort(0x6877DA) == 0 then
 		RunTimer = RunTimer + 1
 		end
 	end
