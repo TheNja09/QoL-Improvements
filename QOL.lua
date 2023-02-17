@@ -114,7 +114,9 @@ local TestAnimation
 		end
 	end
 
-	if ReadByte(0x24AA5B6) == 0 then
+	if ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) > 0 and ReadShort(0x6877DA) == 0 then
+	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, -1.5, true)
+	elseif ReadByte(0x24AA5B6) == 0 then
 	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, 0, true)
 	else WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, 1, true)
 	end
@@ -148,8 +150,6 @@ local TestAnimation
 			Refill = 5
 			end
 		end
-	elseif ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) > 0 and ReadShort(0x6877DA) == 0 then
-	WriteFloat(ReadLong(DriveDepleterPointer) + 0xE6C, -1.5, true)
 	end
 
 WriteFloat(0x250D326, 1) --QR1 Acceleration
