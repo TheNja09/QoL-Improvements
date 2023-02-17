@@ -2,6 +2,7 @@ RunTimer = 100
 KeepAccelerate = {2, 3, 4, 5, 201, 202}
 Done = 0
 Valor = 30
+Refill = 5
 function _OnFrame()
     World = ReadByte(Now + 0x00)
     Room = ReadByte(Now + 0x01)
@@ -131,6 +132,22 @@ local TestAnimation
 	else 
 	Valor = 30
 	WriteFloat(animpointer, 1, true)
+	end
+	
+	if ReadByte(0x2A0E862 - 0x56454E) == 55 and ReadByte(Save+0x3524) == 0 then
+	Refill = Refill - 1
+		if Refill <= 0 then
+			if ReadByte(Slot1+0x1B0) < 100 and ReadByte(Slot1+0x1B1) ~= ReadByte(Slot1+0x1B2) then
+			WriteByte(Slot1+0x1B0, ReadByte(Slot1+0x1B0) + 1)
+			Refill = 5
+			elseif ReadByte(Slot1+0x1B1) == ReadByte(Slot1+0x1B2) then
+			WriteByte(Slot1+0x1B0, 100)
+			elseif ReadByte(Slot1+0x1B0) == 100 and ReadByte(Slot1+0x1B1) < ReadByte(Slot1+0x1B2) then
+			WriteByte(Slot1+0x1B1, ReadByte(Slot1+0x1B1) + 1)
+			WriteByte(Slot1+0x1B0, 0)
+			Refill = 5
+			end
+		end
 	end
 
 WriteFloat(0x250D326, 1) --QR1 Acceleration
