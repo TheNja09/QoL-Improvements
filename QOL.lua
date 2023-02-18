@@ -153,15 +153,15 @@ local TestAnimation
 	end
 
 WriteFloat(0x250D326, 1) --QR1 Acceleration
-WriteFloat(0x250D32A, 0.98) --QR1 Deceleration
+WriteFloat(0x250D32A, 0.93) --QR1 Deceleration
 WriteFloat(0x250D36A, 1) --QR2 Acceleration
-WriteFloat(0x250D36E, 0.98) --QR2 Deceleration
+WriteFloat(0x250D36E, 0.93) --QR2 Deceleration
 WriteFloat(0x250D3AE, 1) --QR3 Acceleration
-WriteFloat(0x250D3B2, 0.98) --QR3 Deceleration
+WriteFloat(0x250D3B2, 0.93) --QR3 Deceleration
 WriteFloat(0x250D3F2, 1) --QR4 Acceleration
-WriteFloat(0x250D3F6, 0.98) --QR4 Deceleration
+WriteFloat(0x250D3F6, 0.93) --QR4 Deceleration
 WriteFloat(0x250D436, 1) --AX2 QR Acceleration
-WriteFloat(0x250D43A, 0.98) --AX2 QR Deceleration
+WriteFloat(0x250D43A, 0.93) --AX2 QR Deceleration
 WriteFloat(Sys3+0x17A9C, -0.00001)
 WriteFloat(Sys3+0x17AA8, -0.00001)
 WriteFloat(Sys3+0x17A94, -0.00001)
